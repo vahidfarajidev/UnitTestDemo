@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MyApi.Controllers
 {
-    public class HelloController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class HelloController : ControllerBase
     {
-        public IActionResult Index()
+        public string Get()
         {
-            return View();
+            return "Hello, World!";
         }
     }
 }
